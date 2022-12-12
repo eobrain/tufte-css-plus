@@ -1,4 +1,4 @@
-# Making Tufte-inspire web pages
+# Making Tufte-inspired web pages
 
 Making [edwardtufte/tufte-css][1] easier by adding HTML components.
 
