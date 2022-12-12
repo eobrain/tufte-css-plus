@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tufte Example</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tufte/tufte.min.css" />
+    <script src="tufte/components.js" type="module"></script>
+  </head>
+
+  <body>
+    <article>
+      <h1>Example Tufte Style</h1>
+      <t-subtitle>by Eamonn O'Brien-Strain</t-subtitle>
+      <section>
+        <p>
+          <t-newthought>To create a Tufte-style document</t-newthought> you use standard HTML semantic elements
+          supplemented with several HTML components, all of whose tags start with
+          "<code>t-</code>".
+        <p>
+          Your file should have the following
+          in the <code>head</code> element.
+        </p>
+        <t-code>
+          &lt;link rel="stylesheet" href="tufte/tufte.min.css" />
+          &lt;script src="tufte/components.js" type="module">&lt;/script>
+        </t-code>
+        <p>
+          Your <code>body</code> element should contain a single <code>article</code>
+          element, which should start with a single <code>h1</code> element,
+          optionally followed by a <code>t-subtitle</code> element.
+          Then you add a series of <code>section</code> elements.
+        </p>
+        <p>
+          Each <code>section</code>
+          element should starts with a <code>p</code> elements that has an initial
+          <code>t-newthought</code> element containing the first few words of
+          the section. Here is an example:
+        </p>
+        <t-code>
+          &lt;body>
+            &lt;article>
+              &lt;h1>Page Title&lt;/h1>
+              &lt;t-subtitle>optional subtitle&lt;/t-subtitle>
+              &lt;section>
+                &lt;p>&lt;t-newthought>Blah blah&lt;/t-newthought> blah blah blah&lt;/p>
+                ...
+              &lt;/section>
+              &lt;section>
+                &lt;p>&lt;t-newthought>Blah blah&lt;/t-newthought> blah blah blah&lt;/p>
+                ...
+              &lt;/section>
+              ...more sections...
+            &lt;/article>
+          &lt;/body>
+        </t-code>
+      </section>
+    </article>
+  </body>
+</html>
