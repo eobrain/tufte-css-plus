@@ -10,10 +10,11 @@ To see the example, download or clone this repo, start a dev HTTP server in the 
 python3 -m http.server
 ```
 
+And then visit http://localhost:8000/example.html
+
 ## Use
 To use this in your own project, simply copy the contents of `tufte` into your web assets and modify your HTML as demonstrated in `example.html`.
 
-And then visit http://localhost:8000/example.html
 
 ## Credit
 
