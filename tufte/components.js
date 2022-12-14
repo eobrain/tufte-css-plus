@@ -1,4 +1,4 @@
-import { a, blockquote, p, label, input, span, pre, code, footer } from './ez-html-elements/index.js'
+import { a, blockquote, div, p, label, input, span, pre, code, footer } from './ez-html-elements/index.js'
 
 /* global HTMLElement customElements */
 
@@ -51,6 +51,13 @@ class TufteSubtitle extends HTMLElement {
   }
 }
 
+class TufteEpigraph extends HTMLElement {
+  connectedCallback () {
+    const title = this.getAttribute('title')
+    this.innerHTML = div(['epigraph'], blockquote(p(this.innerHTML) + footer(title)))
+  }
+}
+
 const BIG = 99999
 function findIndent (line) {
   if (line.length === 0) {
@@ -81,9 +88,10 @@ function removeIndent (code) {
   return lines.join('\n')
 }
 
+customElements.define('t-cite', TufteCite)
+customElements.define('t-code', TufteCode)
+customElements.define('t-epigraph', TufteEpigraph)
 customElements.define('t-marginnote', TufteMarginnote)
 customElements.define('t-newthought', TufteNewThought)
 customElements.define('t-sidenote', TufteSidenote)
 customElements.define('t-subtitle', TufteSubtitle)
-customElements.define('t-cite', TufteCite)
-customElements.define('t-code', TufteCode)
