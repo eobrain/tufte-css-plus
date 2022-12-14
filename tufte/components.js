@@ -1,4 +1,4 @@
-import { label, input, span, pre, code } from './ez-html-elements/index.js'
+import { a, blockquote, p, label, input, span, pre, code, footer } from './ez-html-elements/index.js'
 
 /* global HTMLElement customElements */
 
@@ -7,6 +7,15 @@ let nextId = 0
 class TufteCode extends HTMLElement {
   connectedCallback () {
     this.innerHTML = pre(code(removeIndent(this.innerHTML)))
+  }
+}
+
+class TufteCite extends HTMLElement {
+  connectedCallback () {
+    const href = this.getAttribute('href')
+    const title = this.getAttribute('title')
+    this.innerHTML = blockquote({ cite: href }, p(this.innerHTML) +
+    footer(a({ href }, title)))
   }
 }
 
@@ -76,4 +85,5 @@ customElements.define('t-marginnote', TufteMarginnote)
 customElements.define('t-newthought', TufteNewThought)
 customElements.define('t-sidenote', TufteSidenote)
 customElements.define('t-subtitle', TufteSubtitle)
+customElements.define('t-cite', TufteCite)
 customElements.define('t-code', TufteCode)
